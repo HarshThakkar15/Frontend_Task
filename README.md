@@ -2,7 +2,7 @@
 
 Clone this repository:
 
-git clone https://github.com/yourusername/frontend-task.git
+git clone https://github.com/HarshThakkar15/Frontend_Task
 
 Install dependencies:
 
