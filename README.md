@@ -1,10 +1,11 @@
-
 ## ⚙️ Setup Instructions
-1. Clone this repository:
-   git clone https://github.com/yourusername/frontend-task.git
-Navigate into the folder:
+
+Clone this repository:
+
+git clone https://github.com/yourusername/frontend-task.git
 
 Install dependencies:
+
 npm install
 
 npm run dev
