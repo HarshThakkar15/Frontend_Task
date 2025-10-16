@@ -1,0 +1,289 @@
+.pdf-document-container {
+    width: 800px;
+    margin: 0 auto;
+}
+.pdf-page {
+    width: 800px; 
+    padding: 0;
+    background: white;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+    color: #333;
+    font-size: 10pt;
+
+    padding-bottom: 70px;
+    position: relative;
+
+    min-height: 1120px;
+}
+:root {
+    --vigovia-purple-dark: #5200ff;
+    --vigovia-purple-light: #8e2de2;
+    --vigovia-gradient: linear-gradient(to right, #5200ff, #8e2de2);
+    --vigovia-background-light: #f7f3ff; 
+    --vigovia-text-dark: #333;
+}
+.bg-vigovia-dark { background: var(--vigovia-gradient) !important; color: white !important; }
+.bg-vigovia-light { background-color: var(--vigovia-background-light) !important; }
+.text-vigovia-dark { color: var(--vigovia-purple-dark) !important; }
+.pdf-header-banner {
+    background: var(--vigovia-gradient);
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    margin-bottom: 10px;
+    border-radius: 0 0 10px 10px;
+}
+.pdf-header-banner h1 {
+    font-size: 18pt;
+    margin: 0;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.pdf-header-banner h2 {
+    font-size: 12pt;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+.pdf-header-banner .icon-bar {
+    font-size: 16pt;
+    margin-top: 5px;
+}
+.pdf-info-bar {
+    display: flex;
+    justify-content: space-around;
+    padding: 15px 40px;
+    margin: 0 20px 30px 20px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    font-size: 9pt;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+.pdf-info-item strong {
+    display: block;
+    font-size: 10pt;
+    font-weight: 600;
+    color: var(--vigovia-purple-dark);
+    margin-bottom: 3px;
+}
+.pdf-daily-itinerary {
+    margin: 0 40px 40px 40px;
+}
+.pdf-day-container {
+    display: flex;
+    margin-bottom: 25px;
+    position: relative; 
+}
+.day-label-column {
+    width: 15%;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 20px;
+    padding-left: 30px; 
+    position: relative;
+}
+.day-label-bar {
+    position: absolute;
+    top: 0;
+    left: 0; 
+    width: 25px; 
+    height: 100%; 
+    background-color: var(--vigovia-purple-dark);
+    color: white;
+    writing-mode: vertical-rl; 
+    text-orientation: upright; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10pt;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border-radius: 15px; 
+    padding: 10px 0;
+    line-height: 1;
+}
+.day-label-box {
+    display: none;
+}
+.day-img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%; 
+    margin-top: 10px; 
+    margin-bottom: 10px;
+    background-color: #ddd;
+    border: 1px solid #ccc;
+}
+.day-timeline-content {
+    flex: 1;
+    display: flex;
+    border-left: 2px solid var(--vigovia-purple-light); 
+    position: relative;
+    padding-left: 20px;
+}
+.pdf-day-container:last-child .day-timeline-content {
+    border-left: none; 
+}
+.day-timeline-dot {
+    position: absolute;
+    left: -6px; 
+    top: 0;
+    width: 12px; 
+    height: 12px;
+    background-color: white; 
+    border-radius: 50%;
+    border: 2px solid var(--vigovia-purple-light);
+}
+.timeline-details {
+    flex-grow: 1;
+}
+.timeline-item {
+    display: flex;
+    margin-bottom: 15px;
+    position: relative; 
+}
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -29px; 
+    top: 5px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--vigovia-purple-light);
+    border: 1px solid white; 
+    z-index: 10;
+}
+.timeline-time-label {
+    width: 80px;
+    font-weight: bold;
+    color: var(--vigovia-purple-dark);
+}
+.timeline-activity-details {
+    flex-grow: 1;
+}
+.pdf-table-section {
+    margin: 0 40px 40px 40px;
+}
+.pdf-section-header {
+    font-size: 14pt;
+    font-weight: bold;
+    color: var(--vigovia-text-dark);
+    border-bottom: 2px solid #eee;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+.pdf-table {
+    width: 100%;
+    border-collapse: collapse;
+    page-break-inside: avoid !important;
+}
+.pdf-table th, .pdf-table td {
+    padding: 12px 15px;
+    border: 1px solid #eee;
+    text-align: left;
+    font-size: 9pt;
+    vertical-align: middle;
+}
+.pdf-table tr {
+    page-break-inside: avoid !important;
+}
+.pdf-table th {
+    background-color: var(--vigovia-purple-dark);
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.pdf-table .table-row-head {
+    background-color: var(--vigovia-background-light);
+    color: var(--vigovia-purple-dark);
+    font-weight: bold;
+}
+.flight-row {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #fff;
+    page-break-inside: avoid !important;
+}
+.flight-row-date {
+    width: 25%;
+    background-color: var(--vigovia-background-light);
+    color: var(--vigovia-purple-dark);
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 4px;
+    text-align: center;
+}
+.flight-row-details {
+    padding-left: 20px;
+    flex-grow: 1;
+}
+.flight-notes {
+    margin-top: 5px;
+    font-size: 8pt;
+    color: #666;
+}
+.payment-summary-box {
+    background-color: var(--vigovia-background-light);
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.payment-installments-grid {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+}
+.payment-installments-grid thead, .payment-installments-grid tbody, .payment-installments-grid tr, .payment-installments-grid th, .payment-installments-grid td {
+    display: table-row;
+    width: 100%;
+    border: 1px solid #eee;
+}
+.payment-installments-grid th, .payment-installments-grid td {
+    display: table-cell;
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #eee;
+}
+.payment-installments-grid th {
+    background-color: var(--vigovia-purple-dark);
+    color: white;
+}
+.payment-installments-grid tbody tr td:nth-child(2) {
+    background-color: var(--vigovia-background-light);
+}
+.pdf-footer {
+    width: 100%;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #eee;
+    font-size: 8pt;
+    color: #666;
+    background: white;
+    z-index: 1000;
+    margin-top: 30px;
+}
+.pdf-footer .contact-info div {
+    margin-bottom: 2px;
+}
+.pdf-footer .vigovia-logo-placeholder {
+    font-size: 14pt;
+    font-weight: bold;
+    color: var(--vigovia-purple-dark);
+}
+.pdf-page:not(:last-child) .pdf-footer {
+    position: absolute;
+    bottom: 0;
+}
